@@ -1,0 +1,6 @@
+h1 Blogs
+p
+  = link_to 'Post a new blog', new_blog_path
+- @blogs.each do |blog|
+  h5 = blog['title']
+  p = truncate(blog['body'], length: 50) { link_to('See More', blog_path(id: blog['id'])) }

@@ -1,0 +1,9 @@
+h3 Post a new Blog
+= form_for :blog, url: blogs_path, method: :post do |form|
+  = form.label 'Title'
+  = form.text_field :title
+  br
+  = form.label 'Body'
+  = form.text_area :body
+  br
+  = form.submit 'Post'

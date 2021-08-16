@@ -1,0 +1,11 @@
+h3 = @blog['title']
+p = @blog['body']
+
+h5 Comments
+table{style="border: 1px solid black" }
+  tbody
+    - @comments.each do |comment|
+      td = comment['name']
+      td = comment['body']
+
+= link_to 'Home', root_path
