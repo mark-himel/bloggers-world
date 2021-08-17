@@ -1,0 +1,22 @@
+h3.font-bold.font-sans.break-normal.text-gray-900.pt-6.pb-2.text-3xl.md:text-4xl Comments
+- comments.each do |comment|
+  .flex.w-full.items-center.font-sans.px-4.py-12
+    = image_tag 'avatar.png', class: "w-10 h-10 rounded-full mr-4"
+    .flex-1.px-2
+      p.text-base.font-bold.text-base.md:text-xl.leading-none.mb-2 = comment['name']
+      p.text-gray-600.text-xs.md:text-base = comment['body']
+    .justify-end
+p.py-6 Add a comment
+.flex.w-full.items-center.font-sans.px-4.py-12
+  = form_for :comment, url: comments_path, method: :post, html: { style: "display:inline-block; width: 100%", remote: true } do |form|
+    .flex-1.px-2
+      p.text-base.md:text-xl.leading-none.mb-2
+        = form.label 'Name', style: 'display: inline'
+        = form.text_field :name, style: 'float: right; width: 90%; display: inline'
+      p.text-gray-600.text-xs.md:text-base
+        = form.label 'Body'
+        = form.text_area :body, style: 'float: right; width: 90%; height: 100px; display: inline'
+        = form.hidden_field :post_id, value: post_id
+      p.text-base.md:text-xl.leading-none.mb-2 style="margin-top: 100px; margin-left: 200px"
+        = form.submit 'Post', class: "text-green-500"
+      .justify-end

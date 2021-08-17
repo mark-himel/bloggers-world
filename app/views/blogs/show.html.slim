@@ -1,11 +1,11 @@
-h3 = @blog['title']
-p = @blog['body']
+div.w-full.px-4.md:px-6.text-xl.text-gray-800.leading-normal style="font-family:Georgia,serif;"
+  div.font-sans
+    h1.font-bold.font-sans.break-normal.text-gray-900.pt-6.pb-2.text-3xl.md:text-4xl = @blog['title']
+    p.text-sm.md:text-base.font-normal.text-gray-600 = "Published on #{DateTime.parse(@blog['created_at']).strftime('%a, %d %b %Y %-l:%M %p')}"
+  p.py-6 = @blog['body']
 
-h5 Comments
-table{style="border: 1px solid black" }
-  tbody
-    - @comments.each do |comment|
-      td = comment['name']
-      td = comment['body']
+  hr.border-b-2.border-gray-400.mb-8.mx-4/
 
-= link_to 'Home', root_path
+  div id="comments-section"
+    = render 'blog_comments', comments: @comments, post_id: @blog['id']
+  div id="another-comments-section"

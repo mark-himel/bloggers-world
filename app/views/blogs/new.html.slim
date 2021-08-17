@@ -1,9 +1,15 @@
-h3 Post a new Blog
-= form_for :blog, url: blogs_path, method: :post do |form|
-  = form.label 'Title'
-  = form.text_field :title
-  br
-  = form.label 'Body'
-  = form.text_area :body
-  br
-  = form.submit 'Post'
+div.w-full.px-4.md:px-6.text-xl.text-gray-800.leading-normal style="font-family:Georgia,serif;"
+div.font-sans
+  h3.font-bold.font-sans.break-normal.text-gray-900.pt-6.pb-2.text-3xl.md:text-4xl Post a new blog
+p.py-6
+  = form_for :blog, url: blogs_path, method: :post, html: { style: "display:inline-block; width: 100%"} do |form|
+    p.py-6
+      = form.label 'Title', style: 'display: inline'
+      = form.text_field :title, style: 'float: right; width: 90%; display: inline'
+    p.py-6
+      = form.label 'Body'
+      = form.text_area :body, style: 'float: right; width: 90%; height: 100px; display: inline'
+    br
+    br
+    p.py-6 style="margin-left: 200px"
+      = form.submit 'Post', class: "text-green-500"

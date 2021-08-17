@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'blogs#index'
   resources :blogs, except: %i(edit update destroy) do
     member do
-      resources :comments, only: %i(new create)
+      resources :comments, only: :create
     end
   end
 end

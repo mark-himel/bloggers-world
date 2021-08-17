@@ -1,6 +1,6 @@
-h1 Blogs
-p
-  = link_to 'Post a new blog', new_blog_path
-- @blogs.each do |blog|
-  h5 = blog['title']
-  p = truncate(blog['body'], length: 50) { link_to('See More', blog_path(id: blog['id'])) }
+div.w-full.px-4.md:px-6.text-xl.text-gray-800.leading-normal style="font-family:Georgia,serif;"
+  - @blogs.each do |blog|
+    div.font-sans
+      h1.font-bold.font-sans.break-normal.text-gray-900.pt-6.pb-2.text-3xl.md:text-4xl = link_to blog['title'], blog_path(id: blog['id'])
+      p.text-sm.md:text-base.font-normal.text-gray-600 = "Published on #{DateTime.parse(blog['created_at']).strftime('%a, %d %b %Y %-l:%M %p')}"
+    p.py-6 = truncate(blog['body'], length: 500) { link_to('See More', blog_path(id: blog['id']), class: "text-green-500") }
