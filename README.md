@@ -3,7 +3,7 @@
 A blogging application which communicates with an external blog [server](https://github.com/bluethumbart/blog-server).
 All blogs will be stored on the server. The application will consume the apis of the server and manipulate the blogs.
 
-What the demo[here](https://recordit.co/kCm0BzSuEK).
+What the demo [here](https://recordit.co/kCm0BzSuEK).
 
 ## Installation
 
