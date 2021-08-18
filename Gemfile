@@ -32,6 +32,11 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # For storing environment specific config variables
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+  # For testing
+  gem 'rspec-rails', '~> 5.0.0'
+  # For recroding external api calls
+  gem 'vcr', '~> 6.0'
+  gem 'webmock'
 end
 
 group :development do
